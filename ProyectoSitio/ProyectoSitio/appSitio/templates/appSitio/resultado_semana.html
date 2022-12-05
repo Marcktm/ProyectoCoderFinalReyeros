@@ -1,0 +1,13 @@
+{% extends 'appSitio/base.html' %}
+
+
+{% block contenido %}
+    <ul>
+    {% for s in Semanas %}
+        <p> En la semana número {{s.semana}} :</p>
+        <p>{{s.datos}}</p>
+    {% endfor %}
+    </ul>
+    <a href="{% url 'ap-inicio' %}"> Volver al INICIO</a>
+    <a href="{% url 'ap-semana' %}"> Volver a SEMANAS</a>
+{% endblock %}

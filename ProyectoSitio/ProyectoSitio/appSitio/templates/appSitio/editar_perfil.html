@@ -1,0 +1,23 @@
+{% extends "appSitio/base.html "%}
+
+{% block contenido %}
+
+{% if errors %}
+
+    <p style="color: red">{{errors}}</p>
+
+{% endif %}
+
+
+<form method="post" > {% csrf_token %}
+
+    {{ form.as_p }}
+    <input type="submit" value="GUAARDAR">
+
+    <a href="{% url 'ap-avatar'%}">CAMBIA TU IMAGEN DE AVATAR</a>
+
+</form>
+
+
+
+{% endblock %}

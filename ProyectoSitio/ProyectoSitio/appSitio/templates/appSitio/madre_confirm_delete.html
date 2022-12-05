@@ -1,0 +1,14 @@
+{% extends 'appSitio/base.html' %}
+
+{% block contenido %}
+
+    <form  method="post"> {% csrf_token %}
+        <p>
+            Estas segura de eliminar nombre '{{object.nombre}}'?
+            <input type="submit" value="SI">
+        </p>
+        <a href="{% url 'ap-madre' %}"> Volver a tus datos </a>
+    </form>
+
+
+{% endblock %}

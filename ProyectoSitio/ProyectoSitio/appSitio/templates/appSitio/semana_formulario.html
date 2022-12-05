@@ -1,0 +1,16 @@
+{% extends 'appSitio/base.html' %}
+
+{% block contenido %}
+
+    <p>AQUI PUEDES ANOTAR TUS SUCESOS SEMANALES</p>
+
+    <form action="" method="post">{% csrf_token %}
+
+        {{ formulario.as_p }}
+        
+        <input type="submit" value="ANOTAR">
+        
+
+    </form>
+
+{% endblock %}

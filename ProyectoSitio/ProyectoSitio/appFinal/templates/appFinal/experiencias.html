@@ -1,0 +1,37 @@
+{% extends 'appSitio/base.html' %}
+
+{% block contenido %}
+<h1>EXPERIENCIAS</h1>
+
+<h3>AQUI PUEDES CONTAR TUS EXPERIENCIAS PARA AYUDAR A OTRAS FUTURAS MAMÁS</h3>
+<p>DETALLA LO SIGUIENTE</p>
+<p>----> Tu nombre o seudonimo</p>
+<p>----> La fecha en que ocurrió o en la que publicas esto</p>
+<p>----> Tu experiencia</p>
+<p>----> Sube alguna imagen que ayude a entenderte mejor si quieres</p>
+
+{% if Listado_Exp %}
+
+<ul>
+    {% for Exp in Listado_Exp %}
+        <li>
+            {% if request.user.is_superuser %}
+                {{Exp}} <a href="{% url 'ap-borrarrexperiecias' Exp.id %}"> Borrar  </a>
+                <p>{{Exp.datos}}</p>
+                <p>{{Exp.image}}</p>
+                <img src="{{ Exp.image.url }}" style="max-width: 200px;"/>
+            {% else %}
+                {{Exp}} 
+                <p>{{Exp.datos}}</p>
+                <p>{{Exp.image}}</p>
+                <img src="{{ Exp.image.url }}" style="max-width: 200px;"/>
+            {% endif %}
+
+        </li>
+    {% endfor %}
+</ul>
+{% endif %}
+
+<a href="{% url 'ap-crearexperiecias'%}"> AGREGAR EXPERIENCIAS</a>
+
+{% endblock %}

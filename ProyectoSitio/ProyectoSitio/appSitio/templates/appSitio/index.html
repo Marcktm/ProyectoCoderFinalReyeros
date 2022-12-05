@@ -1,0 +1,25 @@
+{% extends 'appSitio/base.html' %}
+
+
+{% block contenido %}
+{% if request.user.is_authenticated %}
+    <h3>FELICIDADES {{request.user}} !</h3>
+    <p><strong><em>Has comenzado un nuevo camino esperamos que lo disfrutes mucho y tengas un embarazo feliz aqui te dejamos una 
+        lista de beneficios para motivarte :
+    </em></strong></p>
+    <ul>
+        <li>Los dolores menstruales desaparecen. Lógicamente, mientras dure el embarazo la regla no hace acto de presencia, y esta situación suele prolongarse unos meses después del parto durante la lactancia. Pero además, después de un embarazo, muchas mujeres afirman que sus reglas son menos dolorosas que antes.</li>
+        <li>El embarazo puede reducir a largo plazo el riesgo de padecer algunas enfermedades</li>
+        <li>El pelo y la piel lucen más bonitos que nunca. Los cambios hormonales asociados a la gestación hacen que la piel, sobre todo la del rostro, esté especialmente radiante, tersa y luminosa. Además, la caída del cabello se frena y el pelo luce más abundante y con más brillo.
+        </li>
+        <li>El embarazo es una oportunidad única para implementar buenos hábitos para toda la vida. Muchas mujeres consiguen dejar por fin de fumar cuando están buscando un bebé, y es una motivación extra para cuidar de la alimentación y hacer ejercicio de manera regular.</li>
+    </ul>
+{% endif %}
+
+<h1>CRECIMIENTO DEL VIENTRE</h1>
+<img src="https://www.clinicasfertilidad.com/images/blog/1604056593184-embarazo-mes-a-mes.jpg" alt="" style="max-width: 700px ;" >
+<h1>CRECIMIENTO DEL BEBÉ</h1>
+<img src="https://www.abcpedia.com/wp-content/uploads/2015/10/embarazo-por-mes.jpg" alt="" style="max-width: 700px ;" >
+
+{% endblock %}
+

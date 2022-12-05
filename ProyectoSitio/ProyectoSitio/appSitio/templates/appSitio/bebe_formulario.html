@@ -1,0 +1,15 @@
+{% extends 'appSitio/base.html' %}
+
+{% block contenido %}
+
+    <h1>CALCULADORA FECHA PROBABLE DE PARTO</h1>
+
+    <form action="" method="post">{% csrf_token %}
+
+        {{ formulario.as_p }}
+
+        <input type="submit" value="LISTO">
+
+    </form>
+
+{% endblock %}

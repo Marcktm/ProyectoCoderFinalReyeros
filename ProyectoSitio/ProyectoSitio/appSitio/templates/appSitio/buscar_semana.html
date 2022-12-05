@@ -1,0 +1,14 @@
+{% extends 'appSitio/base.html' %}
+
+
+{% block contenido %}   
+
+<form action="{% url 'result-semana' %}" method="get">
+
+    Numero de Semana : <input type="number" name="nro_semana">
+    <input type="submit" value="Buscar">
+
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,29 @@
+{% extends 'appSitio/base.html' %}
+
+
+{% block contenido %}
+<h1>SEMANAS DE EMBARAZO</h1>
+{% if Listado_Semanas %}
+<a href="{% url 'busc-semana' %}"> BUSCAR SEMANA ESPECIFICA</a>
+<ul>
+    {% for semanas in Listado_Semanas %}
+        <li>
+            {% if request.user.is_superuser %}
+                {{semanas}}  <a href="{% url 'editar-semana' semanas.id %}"> Editar</a> <a href="{% url 'eliminar-semana' semanas.id %}">Borrar </a>
+            <p><em><mark>{{semanas.datos}}</mark></em></p>
+            {% else %}
+                {{semanas}}
+                <p><em><mark>{{semanas.datos}}</mark></em></p>
+            {% endif %}
+
+        </li>
+    {% endfor %}
+</ul>
+
+{% endif %}
+
+{% if request.user.is_superuser %}    
+    <h2>CARGAR SEMANA</h2>
+    <a href="{% url 'crear-semana' %}"> CARGAR</a>
+{% endif %}
+{% endblock %}

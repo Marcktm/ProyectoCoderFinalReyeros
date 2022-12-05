@@ -1,0 +1,19 @@
+{% extends 'appSitio/base.html' %}
+
+{% block contenido %}
+
+    {% if errors %}
+    <p style = "color: red">Errores en el inicio de sesion: {{ errors }}</p>
+    {% endif %}
+
+    <form  method="post"> {% csrf_token %}
+        {{ form.as_p }}
+
+        <input type="submit" value="INICIAR SESION">
+
+    </form>
+    <p> No tenes cuenta? <a href="{% url 'ap-registro'%}">Create una</a> </p>
+
+
+
+{% endblock %}

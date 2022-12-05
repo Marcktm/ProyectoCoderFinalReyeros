@@ -1,0 +1,9 @@
+{% extends 'appSitio/base.html' %}
+
+{% block contenido %}
+
+    <p> Madre: {{madre}} </p>
+    <p> {{madre.datos}} </p>
+    <a href="{% url 'ap-madre' %}"> Volver</a>
+
+{% endblock %}

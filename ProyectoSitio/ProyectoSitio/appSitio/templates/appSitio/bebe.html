@@ -1,0 +1,19 @@
+{% extends 'appSitio/base.html' %}
+
+
+{% block contenido %}
+<h1>ESTAS EN EL APARTADO BEBE</h1>
+<p>CON LA FECHA DE TU ULTIMA MENSTRUACION SABRAS LA FECHA PROBABLE DE PARTO</p>
+<p>-------><a href="{% url 'crear-bebe' %}">VAMOS A INTRODUCIR FECHA</a></p>
+{% if FECHA %}
+<ul>
+    {% for b in FECHA %}
+        <li>
+            {{b}} <p>Si ya la viste presiona <a href="{% url 'eliminar-bebe' b.id %}">LISTO </a></p>
+        </li>
+    {% endfor %}
+</ul>
+
+{% endif %}    
+
+{% endblock %}
